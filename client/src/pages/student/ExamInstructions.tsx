@@ -45,7 +45,7 @@ export default function ExamInstructions() {
   };
 
   const handleCancel = () => {
-    navigate('/student');
+    navigate('/student/exams');
   };
 
   return (

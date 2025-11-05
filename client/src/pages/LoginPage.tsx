@@ -140,7 +140,9 @@ export default function LoginPage() {
                     {...buttonStyles.primary}
                     size='lg'
                     w='full'
-                    isLoading={loginMutation.isPending}
+                    isLoading={
+                      loginMutation.isPending && !loginMutation.isSuccess
+                    }
                     loadingText='Signing in...'
                     fontSize='md'
                     fontWeight='semibold'
