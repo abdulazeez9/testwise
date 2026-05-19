@@ -9,7 +9,7 @@ import { setupRoutes } from './v1/routes/index.js';
 // Configure dotenv
 dotenv.config();
 
-//App initialization
+// App initialization
 const app = express();
 const PORT = Number(process.env.PORT) || 5000;
 
@@ -21,25 +21,7 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-setupRoutes(app);
-app.use(errorHandler);
-
-const server = createServer(app);
-webSocketService.init(server);
-
-server.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.get('/health', (req, res) => {
-  res.json({ status: 'ok' });
-});
-
-//Setup routes
+// Setup routes
 setupRoutes(app);
 
 // Error handling
